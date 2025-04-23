@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Mexicanos dijeron</title>
+    <link rel="stylesheet" href="/styles/stylegame.css">
+    <link rel="stylesheet" href="/styles/timer.css">
+</head>
+<body>
+    <div id="timer" class="timer"></div>
+    <div id="background">
+        <div class="background__item item--top">
+            <!-- Marcador general -->
+            <span class="background__item__points points--total" id="totalPoints">000</span>
+        </div>
+        <div class="background__item item--left">
+            <!-- Marcador equipo1 -->
+            <span class="background__item__points points--team1" id="pointsTeam1">000</span>
+        </div>
+        <div class="background__item item--right">
+            <!-- Marcador equipo2 -->
+            <span class="background__item__points points--team2" id="pointsTeam2">000</span>
+        </div>
+        <div class="background__item item--bottom">
+            <!-- Pregunta actual -->
+            <span class="background__item__bottom bottom--question" id="question"></span>
+        </div>
+        <div class="background__item item--teamName1">
+            <!-- Nombre equipo 1 -->
+            <span class="background__item__team team1--name" id="teamName1"></span>
+        </div>
+        <div class="background__item item--namePlayerTeam1">
+            <span id="namePlayer1Team1"></span>
+            <span id="namePlayer2Team1"></span>
+            <span id="namePlayer3Team1"></span>
+            <span id="namePlayer4Team1"></span>
+            <span id="namePlayer5Team1"></span>
+        </div>
+        <div class="background__item item--teamName2">
+            <!-- Nombre equipo 2 -->
+            <span class="background__item__team team2--name" id="teamName2"></span>
+        </div>
+        <div class="background__item item--namePlayerTeam2">
+            <span id="namePlayer1Team2"></span>
+            <span id="namePlayer2Team2"></span>
+            <span id="namePlayer3Team2"></span>
+            <span id="namePlayer4Team2"></span>
+            <span id="namePlayer5Team2"></span>
+        </div>
+        <div class="background__item item--answer1" id="a1">
+            <span id="a1Value"></span> <!-- Respuesta 1 -->
+        </div>
+        <div class="background__item item--answerValue1" id="av1">
+            <span id="av1Value"></span> <!-- Valor respuesta 1 -->
+        </div>
+        <div class="background__item item--answer2" id="a2">
+            <span id="a2Value"></span> <!-- Respuesta 2 -->
+        </div>
+        <div class="background__item item--answerValue2" id="av2">
+            <span id="av2Value"></span> <!-- Valor respuesta 2 -->
+        </div>
+        <div class="background__item item--answer3" id="a3">
+            <span id="a3Value"></span> <!-- Respuesta 3 -->
+        </div>
+        <div class="background__item item--answerValue3" id="av3">
+            <span id="av3Value"></span> <!-- Valor Respuesta 3 -->
+        </div>
+        <div class="background__item item--answer4" id="a4">
+            <span id="a4Value"></span> <!-- Respuesta 4 -->
+        </div>
+        <div class="background__item item--answerValue4" id="av4">
+            <span id="av4Value"></span> <!-- Valor respuesta 4 -->
+        </div>
+        <div class="background__item item--answer5" id="a5">
+            <span id="a5Value"></span> <!-- Respuesta 5 -->
+        </div>
+        <div class="background__item item--answerValue5" id="av5">
+            <span id="av5Value"></span> <!-- Valor respuesta 5 -->
+        </div>
+        <!-- Marcadores de respuestas incorectas -->
+        <div class="background__item item--img img--1" id="img1"></div>
+        <div class="background__item item--img img--2" id="img2"></div>
+        <div class="background__item item--img img--3" id="img3"></div>
+        <div class="background__item item--img img--4" id="img4"></div>
+    </div>
+    <!-- Seleccionar Id de pregunta --> 
+    <div id="newModal" class="form-container">
+        <div class="logo-container">Seleccione ID de Pregunta</div>
+        <form class="form">
+            <div class="form-group">
+                <label for="idQuestion"></label>
+                <input type="text" id="idQuestion" name="idQuestion" placeholder="Escriba el ID" required="">
+            </div>
+            <button class="form-submit-btn" type="button">Buscar</button>
+        </form>
+    </div>
+    <!-- Botones de regreso a pantalla principal -->
+    <button id="returnHome" class="returnHome">
+        <span>Regresar a Inicio</span>
+    </button>
+    <!-- Scripts -->
+    <script src="/scripts/scriptgame.js"></script>
+    <script src="/scripts/timer.js"></script>
+    <script src="/scripts/animations.js"></script>
+</body>
+</html>

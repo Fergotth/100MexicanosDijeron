@@ -1,0 +1,5 @@
+git inid
+git add .
+git commit -m "comentario"
+git remote add origin https://github.com/Fergotth/project-pdv-optica.git
+git push origin master

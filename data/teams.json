@@ -1,0 +1,23 @@
+{
+  "team1": {
+    "nameTeam1": "x team",
+    "playersTeam1": {
+      "player1": "paco",
+      "player2": "pepe",
+      "player3": "pipo",
+      "player4": "popo",
+      "player5": "pupo"
+    }
+  },
+  "team2": {
+    "nameTeam2": "y team",
+    "playersTeam2": {
+      "player1": "ana",
+      "player2": "ena",
+      "player3": "ina",
+      "player4": "ona",
+      "player5": "una"
+    }
+  },
+  "points": "300"
+}

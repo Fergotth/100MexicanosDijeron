@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Mexicanos dijeron</title>
+    <link rel="stylesheet" href="/styles/stylemenu.css">
+    <script src="/scripts/scriptmenu.js"></script>
+</head>
+<body>
+    <div id="background"></div>
+    <button id="startButton" class="start background--itemMenu">Iniciar</button>
+    <button id="playerButton" class="players background--itemMenu">Registar Jugadores</button>
+    <button id="questionsButton" class="questions background--itemMenu">Capturar Preguntas</button>
+    <button id="modifyQuestionsButton" class="modifyQuestions background--itemMenu">Modificar Preguntas</button>
+    <button id="instructions" class="instructions background--itemMenu">Instrucciones</button>
+    <button id="quitButton" class="quit background--itemMenu">Salir</button>
+    
+    <!-- Modal para registrar a los Jugadores -->
+    <div id="modalJugadores">
+        <div id="modalJugadores__content">
+            <h2>Capturar Datos</h2>
+            <form id="dataForm">
+                <div class="team1">
+                    <div class="teamContent teamContent1">
+                        <!-- Captura de nombre del equipo -->
+                        <input type="text" id="team1Name" required />
+                        <label for="team1Name">
+                            <span style="transition-delay: 0ms;">E</span>
+                            <span style="transition-delay: 25ms;">Q</span>
+                            <span style="transition-delay: 50ms;">U</span>
+                            <span style="transition-delay: 75ms;">I</span>
+                            <span style="transition-delay: 100ms;">P</span>
+                            <span style="transition-delay: 125ms;">O</span>
+                            <span style="transition-delay: 150ms;"> </span>
+                            <span style="transition-delay: 175ms;">1</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="team2">
+                    <div class="teamContent teamContent2">
+                        <!-- Captura de nombre del equipo -->
+                        <input type="text" id="team2Name" required />
+                        <label for="team2Name">
+                            <span style="transition-delay: 0ms;">E</span>
+                            <span style="transition-delay: 25ms;">Q</span>
+                            <span style="transition-delay: 50ms;">U</span>
+                            <span style="transition-delay: 75ms;">I</span>
+                            <span style="transition-delay: 100ms;">P</span>
+                            <span style="transition-delay: 125ms;">O</span>
+                            <span style="transition-delay: 150ms;"> </span>
+                            <span style="transition-delay: 175ms;">2</span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <div class="separatorPlayers">
+                <div class="separator1">
+                    <form class="player1InputTeam1 separator1--team1">
+                        <input id="namePlayer1Team1" required="" type="text" />
+                        <span>Jugador 1</span>
+                    </form>
+                    <form class="player2InputTeam1 separator1--team1">
+                        <input id="namePlayer2Team1" required="" type="text" />
+                        <span>Jugador 2</span>
+                    </form>
+                    <form class="player3InputTeam1 separator1--team1">
+                        <input id="namePlayer3Team1" required="" type="text" />
+                        <span>Jugador 3</span>
+                    </form>
+                    <form class="player4InputTeam1 separator1--team1">
+                        <input id="namePlayer4Team1" required="" type="text" />
+                        <span>Jugador 4</span>
+                    </form>
+                    <form class="player5InputTeam1 separator1--team1">
+                        <input id="namePlayer5Team1" required="" type="text" />
+                        <span>Jugador 5</span>
+                    </form>
+                </div>
+                <div class="separator2">
+                    <form class="player1InputTeam2 separator1--team2">
+                        <input id="namePlayer1Team2" required="" type="text" />
+                        <span>Jugador 1</span>
+                    </form>
+                    <form class="player2InputTeam2 separator1--team2">
+                        <input id="namePlayer2Team2" required="" type="text" />
+                        <span>Jugador 2</span>
+                    </form>
+                    <form class="player3InputTeam2 separator1--team2">
+                        <input id="namePlayer3Team2" required="" type="text" />
+                        <span>Jugador 3</span>
+                    </form>
+                    <form class="player4InputTeam2 separator1--team2">
+                        <input id="namePlayer4Team2" required="" type="text" />
+                        <span>Jugador 4</span>
+                    </form>
+                    <form class="player5InputTeam2 separator1--team2">
+                        <input id="namePlayer5Team2" required="" type="text" />
+                        <span>Jugador 5</span>
+                    </form>
+                </div>
+            </div>
+            <div class="totalPoints">
+                <form class="totalPoints--input">
+                    <input id="totalPoints" required="" type="number" />
+                    <span>Puntos para Ganar</span>
+                </form>
+            </div>
+            <div id="buttonContainer">
+                <button id="saveData" type="button">Guardar</button>
+                <button id="closeModal" type="button">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de modal de jugadores -->
+
+    <!-- Modal para registrar las preguntas y los puntos -->
+    <div id="modalQuestionsForm" class="modalQuestions">
+        <div class="modalQuestions__content">
+            <h2 class="modalQuestions__content__title">Registro de Preguntas</h2>
+            <div class="modalQuestions__content__block">    
+                <form class="modalQuestions__content__block__dataForm">
+                    <input type="text" class="modalQuestions__content__dataForm--input" id="inputQuestion" required />
+                    <label for="inputQuestion">
+                        <span style="transition-delay: 0ms;">P</span>
+                        <span style="transition-delay: 25ms;">R</span>
+                        <span style="transition-delay: 5ms;">E</span>
+                        <span style="transition-delay: 75ms;">G</span>
+                        <span style="transition-delay: 100ms;">U</span>
+                        <span style="transition-delay: 125ms;">N</span>
+                        <span style="transition-delay: 150ms;">T</span>
+                        <span style="transition-delay: 175ms;">A</span>
+                    </label>
+                </form>
+            </div> 
+            <div class="modalQuestions__content__block">
+                <div class="modalQuestions__content__block__answers">
+                    <form class="modalQuestions__content__block__answers__input input--a1">
+                        <input type="text" id="inputAnswer1" required="">
+                        <span>Respuesta No. 1</span>
+                    </form>
+                    <form class="modalQuestions__content__block__answers__input input--av1">
+                        <input type="number" id="inputValueAnswer1" required="">
+                        <span>Valor Respuesta No. 1</span>
+                    </form>
+                </div>
+                <div class="modalQuestions__content__block__answers">
+                    <form class="modalQuestions__content__block__answers__input input--a2">
+                        <input type="text" id="inputAnswer2" required="">
+                        <span>Respuesta No. 2</span>
+                    </form>
+                    <form class="modalQuestions__content__block__answers__input input--av2">
+                        <input type="number" id="inputValueAnswer2" required="">
+                        <span>Valor Respuesta No. 2</span>
+                    </form>
+                </div>
+                <div class="modalQuestions__content__block__answers">
+                    <form class="modalQuestions__content__block__answers__input input--a3">
+                        <input type="text" id="inputAnswer3" required="">
+                        <span>Respuesta No. 3</span>
+                    </form>
+                    <form class="modalQuestions__content__block__answers__input input--av3">
+                        <input type="number" id="inputValueAnswer3" required="">
+                        <span>Valor Respuesta No. 3</span>
+                    </form>
+                </div>
+                <div class="modalQuestions__content__block__answers">
+                    <form class="modalQuestions__content__block__answers__input input--a4">
+                        <input type="text" id="inputAnswer4" required="">
+                        <span>Respuesta No. 4</span>
+                    </form>
+                    <form class="modalQuestions__content__block__answers__input input--av4">
+                        <input type="number" id="inputValueAnswer4" required="">
+                        <span>Valor Respuesta No. 4</span>
+                    </form>
+                </div>
+                <div class="modalQuestions__content__block__answers">
+                    <form class="modalQuestions__content__block__answers__input input--a5">
+                        <input type="text" id="inputAnswer5" required="">
+                        <span>Respuesta No. 5</span>
+                    </form>
+                    <form class="modalQuestions__content__block__answers__input input--av5">
+                        <input type="number" id="inputValueAnswer5" required="">
+                        <span>Valor Respuesta No. 5</span>
+                    </form>
+                </div>
+            </div>
+            <div class="modalQuestions__content__block">
+                <form class="modalQuestions__content__block__id input--id">
+                    <input type="number" id="inputId" required="">
+                    <span>ID Pregunta</span>
+                </form>
+            </div>
+            <div class="modalQuestions__content__block modalQuestions__content__block--buttons">
+                <button id="saveDataButtonQuestion" type="button">Guardar</button>
+                <button id="closeModalQuestions" type="button">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de modal para registrar preguntas y puntos -->
+
+    <!-- Modal para modificar las preguntas y los puntos -->
+    <div id="modalModifyQuestionsForm" class="modalModifyQuestions">
+        <div class="modalModifyQuestionsForm__content">
+            <h2 class="content--title">Modificacion de Preguntas</h2>
+            <div class="content--block">    
+                <form class="block--dataForm">
+                    <input type="text" class="dataForm--input" id="inputModifyQuestion" required />
+                    <label for="inputModifyQuestion">
+                        <span style="transition-delay: 0ms;">P</span>
+                        <span style="transition-delay: 25ms;">R</span>
+                        <span style="transition-delay: 5ms;">E</span>
+                        <span style="transition-delay: 75ms;">G</span>
+                        <span style="transition-delay: 100ms;">U</span>
+                        <span style="transition-delay: 125ms;">N</span>
+                        <span style="transition-delay: 150ms;">T</span>
+                        <span style="transition-delay: 175ms;">A</span>
+                    </label>
+                </form>
+            </div> 
+            <div class="content--block">
+                <div class="block--answers">
+                    <form class="answers--input input--a1">
+                        <input type="text" id="inputModifyAnswer1" required="">
+                        <span>Respuesta No. 1</span>
+                    </form>
+                    <form class="answers--input input--av1">
+                        <input type="number" id="inputModifyValueAnswer1" required="">
+                        <span>Valor Respuesta No. 1</span>
+                    </form>
+                </div>
+                <div class="block--answers">
+                    <form class="answers--input input--a2">
+                        <input type="text" id="inputModifyAnswer2" required="">
+                        <span>Respuesta No. 2</span>
+                    </form>
+                    <form class="answers--input input--av2">
+                        <input type="number" id="inputModifyValueAnswer2" required="">
+                        <span>Valor Respuesta No. 2</span>
+                    </form>
+                </div>
+                <div class="block--answers">
+                    <form class="answers--input input--a3">
+                        <input type="text" id="inputModifyAnswer3" required="">
+                        <span>Respuesta No. 3</span>
+                    </form>
+                    <form class="answers--input input--av3">
+                        <input type="number" id="inputModifyValueAnswer3" required="">
+                        <span>Valor Respuesta No. 3</span>
+                    </form>
+                </div>
+                <div class="block--answers">
+                    <form class="answers--input input--a4">
+                        <input type="text" id="inputModifyAnswer4" required="">
+                        <span>Respuesta No. 4</span>
+                    </form>
+                    <form class="answers--input input--av4">
+                        <input type="number" id="inputModifyValueAnswer4" required="">
+                        <span>Valor Respuesta No. 4</span>
+                    </form>
+                </div>
+                <div class="block--answers">
+                    <form class="answers--input input--a5">
+                        <input type="text" id="inputModifyAnswer5" required="">
+                        <span>Respuesta No. 5</span>
+                    </form>
+                    <form class="answers--input input--av5">
+                        <input type="number" id="inputModifyValueAnswer5" required="">
+                        <span>Valor Respuesta No. 5</span>
+                    </form>
+                </div>
+            </div>
+            <div class="content--block">
+                <form class="block--id id--id">
+                    <input type="number" id="inputModifyId" required="">
+                    <span>ID Pregunta</span>
+                </form>
+            </div>
+            <div class="content--block block--buttons">
+                <button id="saveDataButtonModifyQuestion" type="button">Modificar</button>
+                <button id="closeModalModifyQuestions" type="button">Cerrar</button>
+            </div>
+            <div class="content--block block--iconRight">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white iconR" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" tabindex="0" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                </svg>
+            </div>
+            <div class="content--block block--iconLeft">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white iconL" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" tabindex="0" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+                </svg>
+            </div>
+            <div class="content--block block--iconSearch">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white iconS" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" tabindex="0" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de Modal para modificar preguntas -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="/styles/demo.css">
+</head>
+<body>
+    <div id="timer" class="timer"></div>
+    <div id="background" class="background">
+        <span id="totalPoints" class="background__item item--totalPoints">000</span>
+        <span id="pointsTeam1" class="background__item item--team1Points">000</span>
+        <span id="pointsTeam2" class="background__item item--team2Points">000</span>
+        <span id="question" class="background__item item--question">¿Los lobos tambien lloran?</span>
+        <span id="teamName1" class="background__item item--team1">Lobitos</span>
+        <span id="teamName2" class="background__item item--team2">Lobotes</span>
+        <span id="namePlayer1Team1">Pepe</span>
+        <span id="namePlayer1Team2">Pepa</span>
+        <span id="a1Value">A veces</span> <!-- Respuesta 1 -->
+        <span id="av1Value">30</span> <!-- Valor respuesta 1 -->
+        <span id="a2Value">Si</span> <!-- Respuesta 2 -->
+        <span id="av2Value">25</span> <!-- Valor respuesta 2 -->
+        <span id="a3Value">No</span> <!-- Respuesta 3 -->
+        <span id="av3Value">20</span> <!-- Valor Respuesta 3 -->
+        <span id="a4Value">Nunca</span> <!-- Respuesta 4 -->
+        <span id="av4Value">18</span> <!-- Valor respuesta 4 -->
+        <span id="a5Value">Siempre</span> <!-- Respuesta 5 -->
+        <span id="av5Value">10</span> <!-- Valor respuesta 5 -->
+        <div id="img">
+            <img src="/images/x.png" alt="">
+        </div>
+    </div>
+    <div class="message pulse">Da click para iniciar la demostracion</div>
+    <div class="backgroundBlured"></div>
+    <!-- Botones de regreso a pantalla principal -->
+    <button id="returnHome" class="returnHome">
+        <span>Regresar a Inicio</span>
+    </button>
+    <script src="/scripts/instructions.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    --imgHeight: 200px;
+    --imgWidth: 200px;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background: url('/images/img-tablero.jpg') no-repeat center;
+    background-size: 100% 100%; /* Ajusta la imagen para que se vea completa */
+    background-color: black; /* Opcional: establece un color de fondo para los bordes vacíos */
+    transition: background-image 0.5s ease-in-out; /* Transición suave */
+}
+
+button {
+    position: absolute;
+    width: 15%;
+    height: 5%;
+    bottom: 5%;
+    right: 3%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 20px, 40px);
+    color: #ccc;
+    border-radius: 15px;
+    border-color: transparent;
+    background-color: #d132c4;
+    transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out;
+    z-index: 110;
+}
+
+button > span {
+    position: relative;
+    top: -5%;
+}
+
+button:hover {
+    background-color: #ff6ef3;
+    transform: scale(1.1);
+}
+
+button:hover > span {
+    color: #8b0101;
+}
+
+.background > span {
+    position: absolute;
+    font-size: 50px;
+    color: rgb(228, 248, 4);
+    text-shadow: 0 2px 2px #000;
+}
+
+.background > *:not(:nth-child(-n+8)) {
+    display: none;
+}
+
+.message {
+    position: fixed;
+    font-size: 40px;
+    color: rgb(8, 0, 0);
+    text-shadow: 0 4px 2px #707483;
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(200, 255, 0);
+    border-radius: 15px;
+    text-align: center;
+}
+
+#img {
+    position: absolute;
+    top: 33%;
+    left: 29%;
+    display: none;
+}
+
+/* #img img:not(img:first-child) {
+    display: none;
+} */
+
+#img > img {
+    height: 200px;
+    width: 200px;
+}
+
+#totalPoints {
+    left: 48.4%;
+    top: 7.5%;
+    font-size: 60px;
+}
+
+#pointsTeam1 {
+    top: 37%;
+    left: 3.4%;
+}
+
+#pointsTeam2 {
+    top: 37%;
+    right: 4.4%;
+}
+
+#question {
+    color: red;
+    bottom: 5%;
+    left: 30%;
+}
+
+#teamName1 {
+    left: 20%;
+    color: red;
+}
+
+#teamName2 {
+    right: 20%;
+    color: red;
+}
+
+#namePlayer1Team1 {
+    left: 20%;
+    top: 8%;
+    font-size: 40px;
+}
+
+#namePlayer1Team2 {
+    right: 26%;
+    top: 8%;
+    font-size: 40px;
+}
+
+#a1Value {
+    top: 23%;
+    left: 20%;
+}
+
+#av1Value {
+    top: 23%;
+    right: 20%;
+}
+
+#a2Value {
+    top: 33.5%;
+    left: 20%;
+}
+
+#av2Value {
+    top: 33.5%;
+    right: 20%;
+}
+
+#a3Value {
+    top: 44%;
+    left: 20%;
+}
+
+#av3Value {
+    top: 44%;
+    right: 20%;
+}
+
+#a4Value {
+    top: 54.5%;
+    left: 20%;
+}
+
+#av4Value {
+    top: 54.5%;
+    right: 20%;
+}
+
+#a5Value {
+    top: 65%;
+    left: 20%;
+}
+
+#av5Value {
+    top: 65%;
+    right: 20%;
+}
+
+.backgroundBlured {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+
+/* efecto de fondo borroso a la pantalla */
+.overlay {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* Animacion para los elementos activos*/
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* -------------------------------- */

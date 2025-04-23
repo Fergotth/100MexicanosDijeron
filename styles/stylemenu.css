@@ -1,0 +1,363 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#team1, #team2 {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    background: url('/images/img-fondo.jpg') no-repeat center center;
+    background-size: contain; /* Ajusta la imagen para que se vea completa */
+    background-color: black; /* Opcional: establece un color de fondo para los bordes vacíos */
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.0px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+/* Posicion del menu  */
+.start {
+    top: 20px; /* Espacio desde la parte superior */
+}
+
+.players {
+    top: 80px; /* Espacio desde la parte superior */
+}
+
+.questions {
+    top: 140px; /* Espacio desde la parte superior */
+}
+
+.modifyQuestions {
+    top: 200px;
+}
+
+.instructions {
+    top: 260px;
+}
+.quit {
+    bottom: 20px; /* Espacio desde la parte superior */
+}
+
+.background--itemMenu {
+    position: absolute; /* Permite posicionar el botón libremente */
+    left: 20px; /* Espacio desde la izquierda */
+    padding: 17px 40px;
+    border-radius: 50px;
+}
+
+.background--itemMenu:hover {
+    letter-spacing: 2px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.background--itemMenu:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+#modalJugadores, #modalQuestionsForm, #modalModifyQuestionsForm {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Estilos para el contenido del modal */
+#modalJugadores__content, .modalQuestions__content, .modalModifyQuestionsForm__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    background: white;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+    padding: 10px;
+    width: 600px;
+    text-align: center;
+}
+
+.modalQuestions form, .modalModifyQuestions form {
+    display: grid;
+    gap: 20px;
+    padding: 10px;
+}
+
+#dataForm {
+    display: flex; /* Activa el modelo flexbox */
+    justify-content: center ; /* Distribuye los divs a los extremos */
+    align-items: center; /* Centra verticalmente los elementos (opcional) */
+    gap: 80px;
+    margin: 20px 0;
+}
+
+#buttonContainer, .modalQuestions__content__block--buttons, .block--buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#buttonContainer button, .modalQuestions__content__block--buttons button, .block--buttons button {
+    padding: 5px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a90e2;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#buttonContainer button:hover, .modalQuestions__content__block--buttons button:hover, .block--buttons button:hover {
+    background-color: #3a78c2;
+}
+
+/* From Uiverse.io by liyaxu123 */ 
+.teamContent {
+    position: relative;
+    margin: 0;
+    width: 190px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.teamContent input, 
+.modalQuestions__content__block__dataForm input, 
+.modalQuestions__content__block__id input,
+.block--dataForm input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #000 solid;
+    display: block;
+    width: 100%;
+    padding: 2px 0;
+    font-size: 18px;
+    color: #000;
+    margin-left: 5px;
+}
+
+.teamContent1 #team1Name {
+    margin-left: -60px;
+}
+
+.teamContent input:focus, .teamContent input:valid,
+.modalQuestions__content__dataForm--input:focus, .modalQuestions__content__dataForm--input:valid,
+.dataForm--input:focus, .dataForm--input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+}
+
+.teamContent label {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    margin-left: 20px;
+    pointer-events: none;
+}
+
+.modalQuestions__content__block__dataForm label, .block--dataForm label {
+    margin-left: 20px;
+    pointer-events: none;
+    margin-top: -45px;
+    margin-left: -446px;
+}
+
+.teamContent1 label {
+    margin-left: -48px;
+}
+
+.teamContent label span, .modalQuestions__content__block__dataForm label span, .block--dataForm label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    color: #000;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.teamContent input:focus+label span, .teamContent input:valid+label span, 
+.modalQuestions__content__dataForm--input:focus+label span, 
+.modalQuestions__content__dataForm--input:valid+label span,
+.dataForm--input:focus+label span, 
+.dataForm--input:valid+label span {
+    color: rgb(35, 123, 153);
+    transform: translateY(-25px);
+}
+
+.separatorPlayers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo de input para los jugadores y para los input de las respuestas */
+.separator1--team1, .separator1--team2, .totalPoints--input, .modalQuestions__content__block__answers__input input,
+.answers--input input {
+    margin: 10px;
+    position: relative;
+}
+
+.separator1--team1 input, .separator1--team2 input, .totalPoints--input input,
+.modalQuestions__content__block__answers__input input, .modalQuestions__content__block__id input,
+.answers--input input, .block--id input {
+    padding: 20px 15px 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 16px;
+    font-weight: 550;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 0 5px transparent;
+}
+
+.separator1--team1 input:hover, .separator1--team2 input:focus,
+.separator1--team2 input:hover, .separator1--team2 input:focus,
+.totalPoints--input input:hover, .totalPoints--input input:focus,
+.modalQuestions__content__block__answers__input input:hover, 
+.modalQuestions__content__block__answers__input input:focus,
+.modalQuestions__content__block__id input:hover, 
+.modalQuestions__content__block__id input:focus, 
+.answers--input input:hover, .answers--input input:focus,
+.id--id input:hover, .id--id input:focus {
+    box-shadow: 0 0 0 2px #333;
+}
+
+.separator1--team1 span, .separator1--team2 span, .totalPoints--input span, 
+.modalQuestions__content__block__answers__input span, .modalQuestions__content__block__id input span,
+.answers--input span, .id--id span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 13px 15px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 #f1f1f1, 1px -1px 0 #f1f1f1, -1px 1px 0 #f1f1f1,
+    1px 1px 0 #f1f1f1;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.input--a1 span, .input--av1 span {
+    top: 150px;
+}
+
+.input--a2 span, .input--av2 span {
+    top: 218px;
+}
+
+.input--a3 span, .input--av3 span {
+    top: 286px;
+}
+
+.input--a4 span, .input--av4 span {
+    top: 354px;
+}
+
+.input--a5 span, .input--av5 span {
+    top: 422px;
+}
+
+.input--a1 span, .input--a2 span, .input--a3 span, .input--a4 span, .input--a5 span {
+    left: 35px;
+}
+
+.input--av1 span, .input--av2 span, .input--av3 span, .input--av4 span, .input--av5 span {
+    left: 330px;
+}
+
+.input--id input, .id--id input {
+    display: inline-block;
+    position:relative;
+    left: 41%;
+    width: 5vw;
+}
+
+.input--id span .id--id span {
+    left: 43%;
+    position: absolute;
+    top: 83%;
+}
+
+.id--id span {
+    left: 40%;
+    position: absolute;
+    top: 81%;
+}
+/* falta aqui el nuevo modal */
+.separator1--team1 input:focus + span, .separator1--team1 input:valid + span,
+.separator1--team2 input:focus + span, .separator1--team2 input:valid + span,
+.totalPoints--input input:focus + span, .totalPoints--input input:valid + span,
+.modalQuestions__content__block__answers__input input:focus + span,
+.modalQuestions__content__block__answers__input input:valid + span,
+.modalQuestions__content__block__id input:focus + span,
+.modalQuestions__content__block__id input:valid + span,
+.answers--input input:focus + span, .answers--input input:valid + span,
+.id--id input:focus + span, .id--id input:valid + span {
+    transform: translateY(-12px) translateX(-5px) scale(0.95);
+    transition: 0.3s ease-in-out;
+}
+
+.modalQuestions__content__block__answers form, .block--answers form {
+    display: inline;
+}
+
+.block--iconRight {
+    position: absolute;
+    top: 82.5%;
+    right: 20%;
+}
+
+.block--iconLeft {
+    position: absolute;
+    top: 82.5%;
+    left: 20%;
+}
+
+.block--iconSearch {
+    position: absolute;
+    top: 81.5%;
+    right: 37%;
+}
+
+svg {
+    transition: color 0.2s ease-in, width 0.2s ease-in;
+}
+
+svg:hover {
+    color: red;
+    width: 24px;
+    cursor: pointer;
+}
+
+svg:focus {
+    outline: none;
+}
