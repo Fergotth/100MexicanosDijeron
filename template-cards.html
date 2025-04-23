@@ -14,7 +14,7 @@
         body {
             font-family: Arial, sans-serif;
             padding: 10px;
-            background-color: #f9f9f9;
+            background-color: #000;
             padding-top: 60px; /* Espacio para el input sticky */
         }
         
@@ -56,7 +56,7 @@
             flex-direction: column;
             gap: 15px;
             max-width: 500px;
-            margin: 0 auto;
+            margin: 15px auto;
         }
         
         .card {
@@ -141,138 +141,2488 @@
         <button class="nav-button" onclick="navigateToCard()">Ir</button>
     </div>
 
-    <div class="cards-container">
-        <!-- Primera tarjeta -->
-        <div class="card" id="tarjeta1">
-            <div class="card-header">
-                <h3 class="card-title">Tarjeta 1</h3>
-                <a href="#tarjeta1" class="card-number">1</a>
-            </div>
-            
-            <div class="card-content">
-                <div class="two-columns">
-                    <div class="column">
-                        <div class="row">
-                            <span class="left-align">Fila 1 izquierda</span>
-                            <span class="right-align">Fila 1 derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila 2 izquierda</span>
-                            <span class="right-align">Fila 2 derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila 3 izquierda</span>
-                            <span class="right-align">Fila 3 derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila 4 izquierda</span>
-                            <span class="right-align">Fila 4 derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila 5 izquierda</span>
-                            <span class="right-align">Fila 5 derecha</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Segunda tarjeta -->
-        <div class="card" id="tarjeta2">
-            <div class="card-header">
-                <h3 class="card-title">Tarjeta 2</h3>
-                <a href="#tarjeta2" class="card-number">2</a>
-            </div>
-            
-            <div class="card-content">
-                <div class="two-columns">
-                    <div class="column">
-                        <div class="row">
-                            <span class="left-align">Fila A izquierda</span>
-                            <span class="right-align">Fila A derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila B izquierda</span>
-                            <span class="right-align">Fila B derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila C izquierda</span>
-                            <span class="right-align">Fila C derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila D izquierda</span>
-                            <span class="right-align">Fila D derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila E izquierda</span>
-                            <span class="right-align">Fila E derecha</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tercera tarjeta -->
-        <div class="card" id="tarjeta3">
-            <div class="card-header">
-                <h3 class="card-title">Tarjeta 3</h3>
-                <a href="#tarjeta3" class="card-number">3</a>
-            </div>
-            
-            <div class="card-content">
-                <div class="two-columns">
-                    <div class="column">
-                        <div class="row">
-                            <span class="left-align">Fila X izquierda</span>
-                            <span class="right-align">Fila X derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila Y izquierda</span>
-                            <span class="right-align">Fila Y derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila Z izquierda</span>
-                            <span class="right-align">Fila Z derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila W izquierda</span>
-                            <span class="right-align">Fila W derecha</span>
-                        </div>
-                        <div class="row">
-                            <span class="left-align">Fila V izquierda</span>
-                            <span class="right-align">Fila V derecha</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
-        function navigateToCard() {
-            const cardNumber = document.getElementById('cardNavigator').value;
-            if (cardNumber && cardNumber >= 1) {
-                const cardId = 'tarjeta' + cardNumber;
-                const targetCard = document.getElementById(cardId);
+    const dataCards = [
+    {
+        "Question": "Si tu suegra fuera una bruja, ¿Que le regalarias para su cumpleaños?",
+        "id": "1",
+        "Respuesta1": {
+        "answer": "ESCOBA",
+        "points": "36"
+        },
+        "Respuesta2": {
+        "answer": "DISFRAZ",
+        "points": "31"
+        },
+        "Respuesta3": {
+        "answer": "BIBLIA",
+        "points": "17"
+        },
+        "Respuesta4": {
+        "answer": "FLORES",
+        "points": "14"
+        },
+        "Respuesta5": {
+        "answer": "MANZANA",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Algo que comprarias por internet para evitar que te miren raro",
+        "id": "2",
+        "Respuesta1": {
+        "answer": "ROPA INTERIOR",
+        "points": "28"
+        },
+        "Respuesta2": {
+        "answer": "ROPA",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "ARTICULOS PARA ADULTO",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "JUGUETE",
+        "points": "13"
+        },
+        "Respuesta5": {
+        "answer": "ARTICULOS INTIMOS",
+        "points": "10"
+        }
+    },
+    {
+        "Question": "¿Que regalo de cumpleaños le darias a un amigo soltero?",
+        "id": "3",
+        "Respuesta1": {
+        "answer": "DINERO",
+        "points": "38"
+        },
+        "Respuesta2": {
+        "answer": "JUGUETES PARA ADULTOS",
+        "points": "28"
+        },
+        "Respuesta3": {
+        "answer": "BOTELLA",
+        "points": "22"
+        },
+        "Respuesta4": {
+        "answer": "IDA A CLUB DE CABALLEROS",
+        "points": "8"
+        },
+        "Respuesta5": {
+        "answer": "RELOJ",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "Si fueras un duende, ¿A quien le harias travesuras?",
+        "id": "4",
+        "Respuesta1": {
+        "answer": "PAREJA",
+        "points": "27"
+        },
+        "Respuesta2": {
+        "answer": "HIJOS",
+        "points": "24"
+        },
+        "Respuesta3": {
+        "answer": "PAPAS",
+        "points": "20"
+        },
+        "Respuesta4": {
+        "answer": "AMIGO",
+        "points": "18"
+        },
+        "Respuesta5": {
+        "answer": "HERMANOS",
+        "points": "11"
+        }
+    },
+    {
+        "Question": "Si tu roomie fuese hombre, ¿Que te molestaria que dejara en el baño?",
+        "id": "5",
+        "Respuesta1": {
+        "answer": "ROPA",
+        "points": "33"
+        },
+        "Respuesta2": {
+        "answer": "TOALLA",
+        "points": "30"
+        },
+        "Respuesta3": {
+        "answer": "CABELLOS",
+        "points": "27"
+        },
+        "Respuesta4": {
+        "answer": "JABON",
+        "points": "7"
+        },
+        "Respuesta5": {
+        "answer": "SUCIO",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "Utensilio de cocina que compras una vez año",
+        "id": "6",
+        "Respuesta1": {
+        "answer": "SARTEN",
+        "points": "37"
+        },
+        "Respuesta2": {
+        "answer": "CUBIERTOS",
+        "points": "27"
+        },
+        "Respuesta3": {
+        "answer": "CUCHILLO",
+        "points": "25"
+        },
+        "Respuesta4": {
+        "answer": "OLLAS",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "PLATOS",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Sin mencionar marcas, ¿Alimento que usualmente compras en caja?",
+        "id": "7",
+        "Respuesta1": {
+        "answer": "CEREAL",
+        "points": "54"
+        },
+        "Respuesta2": {
+        "answer": "GALLETAS",
+        "points": "24"
+        },
+        "Respuesta3": {
+        "answer": "AVENA",
+        "points": "11"
+        },
+        "Respuesta4": {
+        "answer": "PASTAS",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "CARNE",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Algo que lavas por lo menos una vez al dia",
+        "id": "8",
+        "Respuesta1": {
+        "answer": "TRASTES",
+        "points": "42"
+        },
+        "Respuesta2": {
+        "answer": "DIENTES",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "MANOS",
+        "points": "20"
+        },
+        "Respuesta4": {
+        "answer": "ROPA",
+        "points": "7"
+        },
+        "Respuesta5": {
+        "answer": "CARA",
+        "points": "5"
+        }
+    },
+    {
+        "Question": "Durante el dia, ¿Cuantas vece revisas tu Twitter?",
+        "id": "9",
+        "Respuesta1": {
+        "answer": "DOS",
+        "points": "38"
+        },
+        "Respuesta2": {
+        "answer": "DIEZ",
+        "points": "32"
+        },
+        "Respuesta3": {
+        "answer": "NINGUNA",
+        "points": "22"
+        },
+        "Respuesta4": {
+        "answer": "UNA",
+        "points": "6"
+        },
+        "Respuesta5": {
+        "answer": "CINCO",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "¿Cual es la mejor manera de aprender ingles?",
+        "id": "10",
+        "Respuesta1": {
+        "answer": "ESTUDIANDO",
+        "points": "44"
+        },
+        "Respuesta2": {
+        "answer": "ESCUELA",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "TELEVISION",
+        "points": "15"
+        },
+        "Respuesta4": {
+        "answer": "PRACTICANDO",
+        "points": "12"
+        },
+        "Respuesta5": {
+        "answer": "HABLANDOLO",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "Sin marcas, menciona un producto que se promocione en una avenida",
+        "id": "11",
+        "Respuesta1": {
+        "answer": "COMIDA",
+        "points": "37"
+        },
+        "Respuesta2": {
+        "answer": "BEBIDAS",
+        "points": "29"
+        },
+        "Respuesta3": {
+        "answer": "ROPA",
+        "points": "14"
+        },
+        "Respuesta4": {
+        "answer": "LICOR",
+        "points": "12"
+        },
+        "Respuesta5": {
+        "answer": "TELEFONOS",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "¿En que te fijarias para elegir un entrenador personal?",
+        "id": "12",
+        "Respuesta1": {
+        "answer": "CUERPO",
+        "points": "30"
+        },
+        "Respuesta2": {
+        "answer": "FISICO",
+        "points": "20"
+        },
+        "Respuesta3": {
+        "answer": "MUSCULOS",
+        "points": "19"
+        },
+        "Respuesta4": {
+        "answer": "ACTITUD",
+        "points": "16"
+        },
+        "Respuesta5": {
+        "answer": "EXPERIENCIA",
+        "points": "15"
+        }
+    },
+    {
+        "Question": "Si te perdieras por dias en un desierto, ¿Que te gustaria encontrarte?",
+        "id": "13",
+        "Respuesta1": {
+        "answer": "AGUA",
+        "points": "66"
+        },
+        "Respuesta2": {
+        "answer": "COMIDA",
+        "points": "20"
+        },
+        "Respuesta3": {
+        "answer": "GENTE",
+        "points": "6"
+        },
+        "Respuesta4": {
+        "answer": "AYUDA",
+        "points": "5"
+        },
+        "Respuesta5": {
+        "answer": "LAGOS",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "Cuando haces un viaje largo en coche, ¿Que paradas son obligatorias?",
+        "id": "14",
+        "Respuesta1": {
+        "answer": "BAÑO",
+        "points": "51"
+        },
+        "Respuesta2": {
+        "answer": "COMBUSTIBLE",
+        "points": "28"
+        },
+        "Respuesta3": {
+        "answer": "COMER",
+        "points": "14"
+        },
+        "Respuesta4": {
+        "answer": "DESCANSAR",
+        "points": "5"
+        },
+        "Respuesta5": {
+        "answer": "SEMAFORO",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Ademas de chismosa, ¿Como le dices a una mujer que habla mucho?",
+        "id": "15",
+        "Respuesta1": {
+        "answer": "MITOTERA",
+        "points": "31"
+        },
+        "Respuesta2": {
+        "answer": "COMUNICATIVA",
+        "points": "22"
+        },
+        "Respuesta3": {
+        "answer": "HABLADORA",
+        "points": "21"
+        },
+        "Respuesta4": {
+        "answer": "COTORRA",
+        "points": "18"
+        },
+        "Respuesta5": {
+        "answer": "METICHE",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Comida que se sirven en una fiesta infantil",
+        "id": "16",
+        "Respuesta1": {
+        "answer": "PIZZA",
+        "points": "36"
+        },
+        "Respuesta2": {
+        "answer": "PASTEL",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "HOT DOG",
+        "points": "24"
+        },
+        "Respuesta4": {
+        "answer": "HAMBURGUESAS",
+        "points": "10"
+        },
+        "Respuesta5": {
+        "answer": "SANDWICH",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "En una rifa, ¿Que te gustaria ganar?",
+        "id": "17",
+        "Respuesta1": {
+        "answer": "DINERO",
+        "points": "55"
+        },
+        "Respuesta2": {
+        "answer": "CARRO",
+        "points": "35"
+        },
+        "Respuesta3": {
+        "answer": "CASA",
+        "points": "5"
+        },
+        "Respuesta4": {
+        "answer": "LOTERIA",
+        "points": "3"
+        },
+        "Respuesta5": {
+        "answer": "VIAJE",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Si fueras hombre, ¿Cada cuando te rasurarias la barba?",
+        "id": "18",
+        "Respuesta1": {
+        "answer": "DIARIO",
+        "points": "36"
+        },
+        "Respuesta2": {
+        "answer": "DOS DIAS",
+        "points": "32"
+        },
+        "Respuesta3": {
+        "answer": "TRES DIAS",
+        "points": "17"
+        },
+        "Respuesta4": {
+        "answer": "SEMANA",
+        "points": "13"
+        },
+        "Respuesta5": {
+        "answer": "10 DIAS",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Lugar al que ibas mucho cuando eras pequeño",
+        "id": "19",
+        "Respuesta1": {
+        "answer": "PARQUE",
+        "points": "41"
+        },
+        "Respuesta2": {
+        "answer": "CAMPO",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "CINE",
+        "points": "16"
+        },
+        "Respuesta4": {
+        "answer": "RIO",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "ESCUELA",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Lugar de la casa de tu hija que te molesta que este sucia",
+        "id": "20",
+        "Respuesta1": {
+        "answer": "COCINA",
+        "points": "44"
+        },
+        "Respuesta2": {
+        "answer": "SALA",
+        "points": "20"
+        },
+        "Respuesta3": {
+        "answer": "BAÑO",
+        "points": "17"
+        },
+        "Respuesta4": {
+        "answer": "RECAMARA",
+        "points": "16"
+        },
+        "Respuesta5": {
+        "answer": "CAMA",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "Segun los cuentos de hadas, ¿Que cualidad una princesa?",
+        "id": "21",
+        "Respuesta1": {
+        "answer": "BELLA",
+        "points": "28"
+        },
+        "Respuesta2": {
+        "answer": "IMPORTANTE",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "BUENA PERSONA",
+        "points": "25"
+        },
+        "Respuesta4": {
+        "answer": "EDUCADA",
+        "points": "16"
+        },
+        "Respuesta5": {
+        "answer": "CORONA",
+        "points": "5"
+        }
+    },
+    {
+        "Question": "Si tu fueras Santa Claus y la casa no tuviera chimenea, ¿Por donde entrarias?",
+        "id": "22",
+        "Respuesta1": {
+        "answer": "PUERTA",
+        "points": "57"
+        },
+        "Respuesta2": {
+        "answer": "VENTANA",
+        "points": "53"
+        },
+        "Respuesta3": {
+        "answer": "TECHO",
+        "points": "10"
+        },
+        "Respuesta4": {
+        "answer": "PATIO",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "COLADERA",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Si puediras hablar con un animal de la selva, ¿Cual seria?",
+        "id": "23",
+        "Respuesta1": {
+        "answer": "LEON",
+        "points": "64"
+        },
+        "Respuesta2": {
+        "answer": "CHANGO",
+        "points": "13"
+        },
+        "Respuesta3": {
+        "answer": "TIGRE",
+        "points": "12"
+        },
+        "Respuesta4": {
+        "answer": "JIRAFA",
+        "points": "6"
+        },
+        "Respuesta5": {
+        "answer": "ELEFANTE",
+        "points": "5"
+        }
+    },
+    {
+        "Question": "Si fueras Caperucita Roja, ademas de fruta, ¿Que llevarias en la canasta?",
+        "id": "24",
+        "Respuesta1": {
+        "answer": "PAN",
+        "points": "36"
+        },
+        "Respuesta2": {
+        "answer": "COMIDA",
+        "points": "33"
+        },
+        "Respuesta3": {
+        "answer": "FRUTA",
+        "points": "13"
+        },
+        "Respuesta4": {
+        "answer": "DULCES",
+        "points": "10"
+        },
+        "Respuesta5": {
+        "answer": "GALLETAS",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Algo que te gustaria oir al despertar",
+        "id": "25",
+        "Respuesta1": {
+        "answer": "MUSICA",
+        "points": "40"
+        },
+        "Respuesta2": {
+        "answer": "PAJAROS",
+        "points": "20"
+        },
+        "Respuesta3": {
+        "answer": "GALLO",
+        "points": "17"
+        },
+        "Respuesta4": {
+        "answer": "BUENOS DIAS",
+        "points": "14"
+        },
+        "Respuesta5": {
+        "answer": "CANTAR",
+        "points": "9"
+        }
+    },
+    {
+        "Question": "Amuleto que algunas personas llevan en la cartera",
+        "id": "26",
+        "Respuesta1": {
+        "answer": "VIRGEN",
+        "points": "38"
+        },
+        "Respuesta2": {
+        "answer": "PATA DE CONEJO",
+        "points": "31"
+        },
+        "Respuesta3": {
+        "answer": "IMEGEN",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "BILLETE DE 2 DOLARES",
+        "points": "5"
+        },
+        "Respuesta5": {
+        "answer": "CRUCIFIJO",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "Si fueras un extraterrestre, ¿De que color serias?",
+        "id": "27",
+        "Respuesta1": {
+        "answer": "VERDE",
+        "points": "46"
+        },
+        "Respuesta2": {
+        "answer": "AZUL",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "BLANCO",
+        "points": "13"
+        },
+        "Respuesta4": {
+        "answer": "ROJO",
+        "points": "11"
+        },
+        "Respuesta5": {
+        "answer": "CAFE",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "Menciona una razon por la que se te pondria rojo el rostro",
+        "id": "28",
+        "Respuesta1": {
+        "answer": "VERGÜENZA",
+        "points": "44"
+        },
+        "Respuesta2": {
+        "answer": "PENA",
+        "points": "28"
+        },
+        "Respuesta3": {
+        "answer": "MENTIR",
+        "points": "14"
+        },
+        "Respuesta4": {
+        "answer": "ACCIDENTE",
+        "points": "13"
+        },
+        "Respuesta5": {
+        "answer": "CALOR",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Menciona algo de la cocina que se rompe facilmente",
+        "id": "29",
+        "Respuesta1": {
+        "answer": "PLATOS",
+        "points": "47"
+        },
+        "Respuesta2": {
+        "answer": "VASO",
+        "points": "41"
+        },
+        "Respuesta3": {
+        "answer": "HUEVOS",
+        "points": "6"
+        },
+        "Respuesta4": {
+        "answer": "TASA",
+        "points": "4"
+        },
+        "Respuesta5": {
+        "answer": "LICUADORA",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Palabra con la que terminas un chat",
+        "id": "30",
+        "Respuesta1": {
+        "answer": "BYE",
+        "points": "46"
+        },
+        "Respuesta2": {
+        "answer": "ADIOS",
+        "points": "35"
+        },
+        "Respuesta3": {
+        "answer": "CHAO",
+        "points": "10"
+        },
+        "Respuesta4": {
+        "answer": "GRACIAS",
+        "points": "6"
+        },
+        "Respuesta5": {
+        "answer": "HASTA LUEGO",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "Si pudieras invitar a un artista para cantar en tu fiesta de XV, ¿Quien seria?",
+        "id": "31",
+        "Respuesta1": {
+        "answer": "VICENTE FERNANDEZ",
+        "points": "54"
+        },
+        "Respuesta2": {
+        "answer": "CHAYANNE",
+        "points": "14"
+        },
+        "Respuesta3": {
+        "answer": "GERARDO ORTIZ",
+        "points": "12"
+        },
+        "Respuesta4": {
+        "answer": "PITBULL",
+        "points": "11"
+        },
+        "Respuesta5": {
+        "answer": "SHAKIRA9",
+        "points": "0"
+        }
+    },
+    {
+        "Question": "Bebida que tomas en la playa",
+        "id": "32",
+        "Respuesta1": {
+        "answer": "CERVEZA",
+        "points": "40"
+        },
+        "Respuesta2": {
+        "answer": "PIÑA COLADA",
+        "points": "19"
+        },
+        "Respuesta3": {
+        "answer": "AGUA",
+        "points": "15"
+        },
+        "Respuesta4": {
+        "answer": "AGUA DE COCO",
+        "points": "14"
+        },
+        "Respuesta5": {
+        "answer": "SODA",
+        "points": "12"
+        }
+    },
+    {
+        "Question": "Color de bufanda",
+        "id": "33",
+        "Respuesta1": {
+        "answer": "NEGRO",
+        "points": "41"
+        },
+        "Respuesta2": {
+        "answer": "ROJO",
+        "points": "23"
+        },
+        "Respuesta3": {
+        "answer": "AZUL",
+        "points": "15"
+        },
+        "Respuesta4": {
+        "answer": "CAFE",
+        "points": "13"
+        },
+        "Respuesta5": {
+        "answer": "BLANCO",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Algo que si lo aprendes bien, no se olvida nunca",
+        "id": "34",
+        "Respuesta1": {
+        "answer": "BICICLETA",
+        "points": "30"
+        },
+        "Respuesta2": {
+        "answer": "BAILAR",
+        "points": "22"
+        },
+        "Respuesta3": {
+        "answer": "MANEJAR",
+        "points": "19"
+        },
+        "Respuesta4": {
+        "answer": "LEER",
+        "points": "18"
+        },
+        "Respuesta5": {
+        "answer": "IDIOMA",
+        "points": "11"
+        }
+    },
+    {
+        "Question": "Si vivieras en un cuento de hadas, ¿A quien te encontrarias en el super?",
+        "id": "35",
+        "Respuesta1": {
+        "answer": "PRINCIPE",
+        "points": "31"
+        },
+        "Respuesta2": {
+        "answer": "BLANCA NIEVES",
+        "points": "28"
+        },
+        "Respuesta3": {
+        "answer": "CENICIENTA",
+        "points": "18"
+        },
+        "Respuesta4": {
+        "answer": "BRUJA",
+        "points": "17"
+        },
+        "Respuesta5": {
+        "answer": "SHREK",
+        "points": "6"
+        }
+    },
+    {
+        "Question": "Si tu hija te presenta a su novio, ¿Que artista latina te gustaria que fuera?",
+        "id": "36",
+        "Respuesta1": {
+        "answer": "WILLIAM LEVY",
+        "points": "55"
+        },
+        "Respuesta2": {
+        "answer": "RICKY MARTIN",
+        "points": "27"
+        },
+        "Respuesta3": {
+        "answer": "CHAYANNE",
+        "points": "15"
+        },
+        "Respuesta4": {
+        "answer": "LUIS MIGUEL",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "PRINCE ROYCE",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "¿Cuantas veces masticas un bocado antes de pasartelo?",
+        "id": "37",
+        "Respuesta1": {
+        "answer": "CINCO",
+        "points": "28"
+        },
+        "Respuesta2": {
+        "answer": "DIEZ",
+        "points": "24"
+        },
+        "Respuesta3": {
+        "answer": "TRES",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "OCHO",
+        "points": "17"
+        },
+        "Respuesta5": {
+        "answer": "DOS",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "¿Cuantos dientes tienes?",
+        "id": "38",
+        "Respuesta1": {
+        "answer": "VEINTE",
+        "points": "28"
+        },
+        "Respuesta2": {
+        "answer": "TREINTA Y DOS",
+        "points": "22"
+        },
+        "Respuesta3": {
+        "answer": "VEINTICINCO",
+        "points": "18"
+        },
+        "Respuesta4": {
+        "answer": "VEINTIOCHO",
+        "points": "17"
+        },
+        "Respuesta5": {
+        "answer": "TREINTA",
+        "points": "15"
+        }
+    },
+    {
+        "Question": "Sabor de una malteada",
+        "id": "39",
+        "Respuesta1": {
+        "answer": "FRESA",
+        "points": "49"
+        },
+        "Respuesta2": {
+        "answer": "CHOCOLATE",
+        "points": "22"
+        },
+        "Respuesta3": {
+        "answer": "VAINILLA",
+        "points": "21"
+        },
+        "Respuesta4": {
+        "answer": "PLATANO",
+        "points": "6"
+        },
+        "Respuesta5": {
+        "answer": "CAFE",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Si fueras caminando con tu suegra y ella se cayera, ¿Que harias?",
+        "id": "40",
+        "Respuesta1": {
+        "answer": "LEVANTARLA",
+        "points": "52"
+        },
+        "Respuesta2": {
+        "answer": "AYUDAR",
+        "points": "27"
+        },
+        "Respuesta3": {
+        "answer": "ME RIO",
+        "points": "12"
+        },
+        "Respuesta4": {
+        "answer": "DEJARLA",
+        "points": "8"
+        },
+        "Respuesta5": {
+        "answer": "CORRO",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Forma de demostrar que quieres a alguien",
+        "id": "41",
+        "Respuesta1": {
+        "answer": "BESOS",
+        "points": "30"
+        },
+        "Respuesta2": {
+        "answer": "ABRAZOS",
+        "points": "28"
+        },
+        "Respuesta3": {
+        "answer": "REGALO",
+        "points": "19"
+        },
+        "Respuesta4": {
+        "answer": "FLORES",
+        "points": "16"
+        },
+        "Respuesta5": {
+        "answer": "CARIÑO",
+        "points": "7"
+        }
+    },
+    {
+        "Question": "Cuando un hombre tiene barba, ¿Que te molesta en tu cara cuando te besa?",
+        "id": "42",
+        "Respuesta1": {
+        "answer": "LABIOS",
+        "points": "48"
+        },
+        "Respuesta2": {
+        "answer": "MEJILLA",
+        "points": "24"
+        },
+        "Respuesta3": {
+        "answer": "CARA",
+        "points": "11"
+        },
+        "Respuesta4": {
+        "answer": "NARIZ",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "CUELLO",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Si tuvieras que vivir en el supermercado, ¿Cual seria tu departamento favorito?",
+        "id": "43",
+        "Respuesta1": {
+        "answer": "FRUTAS",
+        "points": "37"
+        },
+        "Respuesta2": {
+        "answer": "COMIDA",
+        "points": "32"
+        },
+        "Respuesta3": {
+        "answer": "PANADERIA",
+        "points": "18"
+        },
+        "Respuesta4": {
+        "answer": "VERDURAS",
+        "points": "7"
+        },
+        "Respuesta5": {
+        "answer": "CONGELADOS",
+        "points": "6"
+        }
+    },
+    {
+        "Question": "Color de camisa mas usado por los hombres",
+        "id": "44",
+        "Respuesta1": {
+        "answer": "AZUL",
+        "points": "43"
+        },
+        "Respuesta2": {
+        "answer": "BLANCO",
+        "points": "29"
+        },
+        "Respuesta3": {
+        "answer": "NEGRO",
+        "points": "25"
+        },
+        "Respuesta4": {
+        "answer": "GRIS",
+        "points": "2"
+        },
+        "Respuesta5": {
+        "answer": "ROJO",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Algo que usan los hospitales para transportar pacientes",
+        "id": "45",
+        "Respuesta1": {
+        "answer": "AMBULANCIA",
+        "points": "60"
+        },
+        "Respuesta2": {
+        "answer": "CAMILLA",
+        "points": "28"
+        },
+        "Respuesta3": {
+        "answer": "SILLA DE RUEDAS",
+        "points": "9"
+        },
+        "Respuesta4": {
+        "answer": "HELICOPTERO",
+        "points": "2"
+        },
+        "Respuesta5": {
+        "answer": "CARGANDOLO",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Dia de la semana en la que hay mas gente en los cines",
+        "id": "46",
+        "Respuesta1": {
+        "answer": "SABADO",
+        "points": "48"
+        },
+        "Respuesta2": {
+        "answer": "VIERNES",
+        "points": "23"
+        },
+        "Respuesta3": {
+        "answer": "DOMINGO",
+        "points": "14"
+        },
+        "Respuesta4": {
+        "answer": "MIERCOLES",
+        "points": "11"
+        },
+        "Respuesta5": {
+        "answer": "FIN DE SEMANA",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "¿Cuantos integrantes podria tener un grupo musical?",
+        "id": "47",
+        "Respuesta1": {
+        "answer": "CINCO",
+        "points": "35"
+        },
+        "Respuesta2": {
+        "answer": "SEIS",
+        "points": "27"
+        },
+        "Respuesta3": {
+        "answer": "DIEZ",
+        "points": "16"
+        },
+        "Respuesta4": {
+        "answer": "OCHO",
+        "points": "12"
+        },
+        "Respuesta5": {
+        "answer": "DOCE",
+        "points": "10"
+        }
+    },
+    {
+        "Question": "Lugadores donde es comun encontrar una fuente de agua",
+        "id": "48",
+        "Respuesta1": {
+        "answer": "PARQUE",
+        "points": "54"
+        },
+        "Respuesta2": {
+        "answer": "PLAZA",
+        "points": "15"
+        },
+        "Respuesta3": {
+        "answer": "CENTRO COMERCIAL",
+        "points": "12"
+        },
+        "Respuesta4": {
+        "answer": "DESIERTO",
+        "points": "11"
+        },
+        "Respuesta5": {
+        "answer": "RIO",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Algo que es complicado hacer cuando tienes brackets en los dientes",
+        "id": "49",
+        "Respuesta1": {
+        "answer": "COMER",
+        "points": "64"
+        },
+        "Respuesta2": {
+        "answer": "MASCAR CHICLE",
+        "points": "21"
+        },
+        "Respuesta3": {
+        "answer": "BESAR",
+        "points": "9"
+        },
+        "Respuesta4": {
+        "answer": "CHIFLAR",
+        "points": "4"
+        },
+        "Respuesta5": {
+        "answer": "HABLAR",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Menciona algo que hacen los gatos y los humanos no podemos hacer",
+        "id": "50",
+        "Respuesta1": {
+        "answer": "MAULLAR",
+        "points": "29"
+        },
+        "Respuesta2": {
+        "answer": "TREPAR",
+        "points": "24"
+        },
+        "Respuesta3": {
+        "answer": "LAMERSE",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "BRINCAR ALTO",
+        "points": "19"
+        },
+        "Respuesta5": {
+        "answer": "CAER DE PIE",
+        "points": "5"
+        }
+    },
+    {
+        "Question": "En las peliculas, ¿Cual es la palabra mas comun que dice un juex?",
+        "id": "51",
+        "Respuesta1": {
+        "answer": "ORDEN",
+        "points": "28"
+        },
+        "Respuesta2": {
+        "answer": "CULPABLE",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "CASO CERRADO",
+        "points": "25"
+        },
+        "Respuesta4": {
+        "answer": "SILENCIO",
+        "points": "3"
+        },
+        "Respuesta5": {
+        "answer": "SENTENCIADO",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Instrumento musical que seria muy dificil trasladar en un auto",
+        "id": "52",
+        "Respuesta1": {
+        "answer": "PIANO",
+        "points": "71"
+        },
+        "Respuesta2": {
+        "answer": "TAMBORA",
+        "points": "10"
+        },
+        "Respuesta3": {
+        "answer": "VIOLONCHELO",
+        "points": "9"
+        },
+        "Respuesta4": {
+        "answer": "BATERIA",
+        "points": "6"
+        },
+        "Respuesta5": {
+        "answer": "TOLOLOCHE",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "Orden mas comun que le das a tu perro",
+        "id": "53",
+        "Respuesta1": {
+        "answer": "SENTADO",
+        "points": "41"
+        },
+        "Respuesta2": {
+        "answer": "AFUERA",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "CALLATE",
+        "points": "24"
+        },
+        "Respuesta4": {
+        "answer": "QUIETO",
+        "points": "5"
+        },
+        "Respuesta5": {
+        "answer": "COME",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "¿Quien no te gustaria que supiera tu contraseña de Facebook?",
+        "id": "54",
+        "Respuesta1": {
+        "answer": "PAREJA",
+        "points": "38"
+        },
+        "Respuesta2": {
+        "answer": "PAPAS",
+        "points": "31"
+        },
+        "Respuesta3": {
+        "answer": "HIJOS",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "HERMANOS",
+        "points": "5"
+        },
+        "Respuesta5": {
+        "answer": "AMIGOS",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "Si le tuvieras miedo al agua, ¿Que deporte evitarias practicar?",
+        "id": "55",
+        "Respuesta1": {
+        "answer": "NATACION",
+        "points": "84"
+        },
+        "Respuesta2": {
+        "answer": "BUCEO",
+        "points": "10"
+        },
+        "Respuesta3": {
+        "answer": "SURF",
+        "points": "3"
+        },
+        "Respuesta4": {
+        "answer": "ESQUIAR",
+        "points": "2"
+        },
+        "Respuesta5": {
+        "answer": "WATER POLO",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "¿Al lado de que celebridad latina odiarias sentarte en el cine?",
+        "id": "56",
+        "Respuesta1": {
+        "answer": "THALIA",
+        "points": "29"
+        },
+        "Respuesta2": {
+        "answer": "VICENTE FERNANDEZ",
+        "points": "24"
+        },
+        "Respuesta3": {
+        "answer": "PAQUITA LA DEL BARRIO",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "JENNIFER LOPEZ",
+        "points": "19"
+        },
+        "Respuesta5": {
+        "answer": "LUCERO",
+        "points": "5"
+        }
+    },
+    {
+        "Question": "Forma en la que estas en contacto con tus seres queridos",
+        "id": "57",
+        "Respuesta1": {
+        "answer": "TELEFONO",
+        "points": "85"
+        },
+        "Respuesta2": {
+        "answer": "REDES SOCIALES",
+        "points": "8"
+        },
+        "Respuesta3": {
+        "answer": "INTERNET",
+        "points": "4"
+        },
+        "Respuesta4": {
+        "answer": "COMPARTIR",
+        "points": "2"
+        },
+        "Respuesta5": {
+        "answer": "MENSAJES",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Si reencarnaras en un personaje de caricaturas, ¿Quien serias?",
+        "id": "58",
+        "Respuesta1": {
+        "answer": "MICKEY MOUSE",
+        "points": "40"
+        },
+        "Respuesta2": {
+        "answer": "BUGS BUNNY",
+        "points": "33"
+        },
+        "Respuesta3": {
+        "answer": "MINNIE MOUSE",
+        "points": "10"
+        },
+        "Respuesta4": {
+        "answer": "DORA",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "PRINCESA",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Color de ropa que mas usas en invierno",
+        "id": "59",
+        "Respuesta1": {
+        "answer": "NEGRO",
+        "points": "61"
+        },
+        "Respuesta2": {
+        "answer": "AZUL",
+        "points": "15"
+        },
+        "Respuesta3": {
+        "answer": "GRIS",
+        "points": "9"
+        },
+        "Respuesta4": {
+        "answer": "ROJO",
+        "points": "8"
+        },
+        "Respuesta5": {
+        "answer": "BLANCO",
+        "points": "7"
+        }
+    },
+    {
+        "Question": "¿De que famoso te gustaria que hicieran un calendario sexy?",
+        "id": "60",
+        "Respuesta1": {
+        "answer": "WILLIAM LEVY",
+        "points": "37"
+        },
+        "Respuesta2": {
+        "answer": "DAVID ZEPEDA",
+        "points": "33"
+        },
+        "Respuesta3": {
+        "answer": "GABRIEL SOTO",
+        "points": "13"
+        },
+        "Respuesta4": {
+        "answer": "FERNANDO COLUNGA",
+        "points": "10"
+        },
+        "Respuesta5": {
+        "answer": "BRAD PITT",
+        "points": "7"
+        }
+    },
+    {
+        "Question": "¿De que famosa te gustaria que hicieran un calendario sexy?",
+        "id": "61",
+        "Respuesta1": {
+        "answer": "KIM KARDASHIAN",
+        "points": "59"
+        },
+        "Respuesta2": {
+        "answer": "SHAKIRA",
+        "points": "21"
+        },
+        "Respuesta3": {
+        "answer": "JENNIFER LOPEZ",
+        "points": "10"
+        },
+        "Respuesta4": {
+        "answer": "NINEL CONDE",
+        "points": "6"
+        },
+        "Respuesta5": {
+        "answer": "SOFIA VERGARA",
+        "points": "0"
+        }
+    },
+    {
+        "Question": "¿Que sonido de transporte es facil de identificar?",
+        "id": "62",
+        "Respuesta1": {
+        "answer": "TREN",
+        "points": "41"
+        },
+        "Respuesta2": {
+        "answer": "CARRO",
+        "points": "38"
+        },
+        "Respuesta3": {
+        "answer": "AUTOBUS",
+        "points": "12"
+        },
+        "Respuesta4": {
+        "answer": "MOTOCICLETA",
+        "points": "5"
+        },
+        "Respuesta5": {
+        "answer": "AVION 4",
+        "points": "0"
+        }
+    },
+    {
+        "Question": "Si encontraras la fuente de la juventud, ¿Con quien no la compartirias?",
+        "id": "63",
+        "Respuesta1": {
+        "answer": "PAREJA",
+        "points": "40"
+        },
+        "Respuesta2": {
+        "answer": "ENEMIGOS",
+        "points": "33"
+        },
+        "Respuesta3": {
+        "answer": "SUEGROS",
+        "points": "10"
+        },
+        "Respuesta4": {
+        "answer": "AMIGA",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "GENTE MALA",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Si cambiaras de numero telefonico, ¿Como le avisas a tus contactos?",
+        "id": "64",
+        "Respuesta1": {
+        "answer": "HABLANDO ANTES",
+        "points": "37"
+        },
+        "Respuesta2": {
+        "answer": "CORREO ELECTRONICO",
+        "points": "31"
+        },
+        "Respuesta3": {
+        "answer": "FACEBOOK",
+        "points": "24"
+        },
+        "Respuesta4": {
+        "answer": "CELULAR",
+        "points": "5"
+        },
+        "Respuesta5": {
+        "answer": "INTERNET",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "Si te atraparan en los años 50's, ¿Que extrañarias de la actualidad?",
+        "id": "65",
+        "Respuesta1": {
+        "answer": "TECNOLOGIA",
+        "points": "40"
+        },
+        "Respuesta2": {
+        "answer": "TELEFONO",
+        "points": "29"
+        },
+        "Respuesta3": {
+        "answer": "INTERNET",
+        "points": "20"
+        },
+        "Respuesta4": {
+        "answer": "COMPUTADORA",
+        "points": "8"
+        },
+        "Respuesta5": {
+        "answer": "COMUNICACION",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "Artista del que podrias escuchar su musica todo el dia",
+        "id": "66",
+        "Respuesta1": {
+        "answer": "JUSTIN BIEBER",
+        "points": "30"
+        },
+        "Respuesta2": {
+        "answer": "VICENTE FERNANDEZ",
+        "points": "22"
+        },
+        "Respuesta3": {
+        "answer": "MARC ANTONY",
+        "points": "20"
+        },
+        "Respuesta4": {
+        "answer": "ROBERTO CARLOS",
+        "points": "16"
+        },
+        "Respuesta5": {
+        "answer": "SHAKIRA",
+        "points": "12"
+        }
+    },
+    {
+        "Question": "Ademas de cocinar, ¿Que otra cosa podrias hacer en la cocina?",
+        "id": "67",
+        "Respuesta1": {
+        "answer": "LIMPIAR",
+        "points": "36"
+        },
+        "Respuesta2": {
+        "answer": "LAVAR TRASTES",
+        "points": "33"
+        },
+        "Respuesta3": {
+        "answer": "PLATICAR",
+        "points": "17"
+        },
+        "Respuesta4": {
+        "answer": "COMER",
+        "points": "12"
+        },
+        "Respuesta5": {
+        "answer": "CAFE",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Artista que te gustaria ver en el medio tiempo de un super Bowl",
+        "id": "68",
+        "Respuesta1": {
+        "answer": "SHAKIRA",
+        "points": "35"
+        },
+        "Respuesta2": {
+        "answer": "JENNIFER LOPEZ",
+        "points": "28"
+        },
+        "Respuesta3": {
+        "answer": "BEYONCE",
+        "points": "24"
+        },
+        "Respuesta4": {
+        "answer": "ALEJANDRO FERNANDEZ",
+        "points": "7"
+        },
+        "Respuesta5": {
+        "answer": "PRINCE ROYCE",
+        "points": "6"
+        }
+    },
+    {
+        "Question": "Tipo de evento que puede llegar a paralizar una ciudad",
+        "id": "69",
+        "Respuesta1": {
+        "answer": "CONCIERTO",
+        "points": "30"
+        },
+        "Respuesta2": {
+        "answer": "PARTIDO",
+        "points": "24"
+        },
+        "Respuesta3": {
+        "answer": "TEMBLOR",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "ATAQUE TERRORISTA",
+        "points": "19"
+        },
+        "Respuesta5": {
+        "answer": "DESFILE",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "Algo que tienes en tu cuarto de tu artista favorito",
+        "id": "70",
+        "Respuesta1": {
+        "answer": "POSTER",
+        "points": "51"
+        },
+        "Respuesta2": {
+        "answer": "DISCO",
+        "points": "25"
+        },
+        "Respuesta3": {
+        "answer": "FOTO",
+        "points": "18"
+        },
+        "Respuesta4": {
+        "answer": "BOLETO",
+        "points": "4"
+        },
+        "Respuesta5": {
+        "answer": "GUITARRA",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Menciona un evento en el que hay fuegos artificiales",
+        "id": "71",
+        "Respuesta1": {
+        "answer": "INDEPENDENCIA",
+        "points": "69"
+        },
+        "Respuesta2": {
+        "answer": "AÑO NUEVO",
+        "points": "11"
+        },
+        "Respuesta3": {
+        "answer": "CARNAVAL",
+        "points": "10"
+        },
+        "Respuesta4": {
+        "answer": "FERIA",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "BEISBOL",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Si pudieras reencarnar en un famoso, ¿Quien serias?",
+        "id": "72",
+        "Respuesta1": {
+        "answer": "PEDRO INFANTE",
+        "points": "35"
+        },
+        "Respuesta2": {
+        "answer": "SHAKIRA",
+        "points": "29"
+        },
+        "Respuesta3": {
+        "answer": "JENNIFER LOPEZ",
+        "points": "22"
+        },
+        "Respuesta4": {
+        "answer": "JENNY RIVERA",
+        "points": "10"
+        },
+        "Respuesta5": {
+        "answer": "MARIA FELIX",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "¿Que tema es el mas gracioso que has visto en las redes sociales?",
+        "id": "73",
+        "Respuesta1": {
+        "answer": "CHISTES",
+        "points": "29"
+        },
+        "Respuesta2": {
+        "answer": "CAIDAS",
+        "points": "25"
+        },
+        "Respuesta3": {
+        "answer": "ANIMALES",
+        "points": "20"
+        },
+        "Respuesta4": {
+        "answer": "CHESPIRITO",
+        "points": "16"
+        },
+        "Respuesta5": {
+        "answer": "POLITICA",
+        "points": "10"
+        }
+    },
+    {
+        "Question": "Si William Levy tocara a tu puerta, ¿Que harias?",
+        "id": "74",
+        "Respuesta1": {
+        "answer": "ABRIR",
+        "points": "38"
+        },
+        "Respuesta2": {
+        "answer": "GRITO",
+        "points": "20"
+        },
+        "Respuesta3": {
+        "answer": "ABRAZARLO",
+        "points": "19"
+        },
+        "Respuesta4": {
+        "answer": "DEJARLO PASAR",
+        "points": "13"
+        },
+        "Respuesta5": {
+        "answer": "TOMAR FOTO",
+        "points": "10"
+        }
+    },
+    {
+        "Question": "El dia de tu boda, ¿Que flor elegirias para tu ramo?",
+        "id": "75",
+        "Respuesta1": {
+        "answer": "ROSA",
+        "points": "33"
+        },
+        "Respuesta2": {
+        "answer": "BLANCO",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "ALCATRAZ",
+        "points": "22"
+        },
+        "Respuesta4": {
+        "answer": "MARGARITAS",
+        "points": "14"
+        },
+        "Respuesta5": {
+        "answer": "CLAVEL",
+        "points": "5"
+        }
+    },
+    {
+        "Question": "¿Que cantante famoso te gustaria ver en el carnal de la \"Calle Ocho\"?",
+        "id": "76",
+        "Respuesta1": {
+        "answer": "PITBULL",
+        "points": "31"
+        },
+        "Respuesta2": {
+        "answer": "ENRIQUE IGLESIAS",
+        "points": "28"
+        },
+        "Respuesta3": {
+        "answer": "JENNIFER LOPEZ",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "RICKY MARTIN",
+        "points": "11"
+        },
+        "Respuesta5": {
+        "answer": "SHAKIRA",
+        "points": "7"
+        }
+    },
+    {
+        "Question": "En las peliculas de terror, ¿Que es lo mas comun que hay debajo de la cama?",
+        "id": "77",
+        "Respuesta1": {
+        "answer": "MONSTRUO",
+        "points": "42"
+        },
+        "Respuesta2": {
+        "answer": "FANTASMA",
+        "points": "37"
+        },
+        "Respuesta3": {
+        "answer": "PERSONA",
+        "points": "11"
+        },
+        "Respuesta4": {
+        "answer": "MANO",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "MUERTO",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Cantante famosa por su ropa de vestir",
+        "id": "78",
+        "Respuesta1": {
+        "answer": "LADY GAGA",
+        "points": "40"
+        },
+        "Respuesta2": {
+        "answer": "JENNIFER LOPEZ",
+        "points": "20"
+        },
+        "Respuesta3": {
+        "answer": "SHAKIRA",
+        "points": "16"
+        },
+        "Respuesta4": {
+        "answer": "GLORIA TREVI",
+        "points": "14"
+        },
+        "Respuesta5": {
+        "answer": "JENNI RIVERA",
+        "points": "10"
+        }
+    },
+    {
+        "Question": "Algo que si se cae, se rompe (si dicen vidrio especificar que articulo)",
+        "id": "79",
+        "Respuesta1": {
+        "answer": "VASI",
+        "points": "40"
+        },
+        "Respuesta2": {
+        "answer": "PLATO",
+        "points": "31"
+        },
+        "Respuesta3": {
+        "answer": "ESPEJO",
+        "points": "24"
+        },
+        "Respuesta4": {
+        "answer": "JARRON",
+        "points": "4"
+        },
+        "Respuesta5": {
+        "answer": "HUEVOS",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Algo que puedes hacer alrededor de una fogata",
+        "id": "80",
+        "Respuesta1": {
+        "answer": "ASAR BOMBONES",
+        "points": "36"
+        },
+        "Respuesta2": {
+        "answer": "PLATICAR",
+        "points": "34"
+        },
+        "Respuesta3": {
+        "answer": "CALENTARSE",
+        "points": "24"
+        },
+        "Respuesta4": {
+        "answer": "BAILAR",
+        "points": "4"
+        },
+        "Respuesta5": {
+        "answer": "ASAR COMIDA",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Lugar en el que si usar lentes de sol, te veran raro",
+        "id": "81",
+        "Respuesta1": {
+        "answer": "CINE",
+        "points": "32"
+        },
+        "Respuesta2": {
+        "answer": "DISCOTECA",
+        "points": "25"
+        },
+        "Respuesta3": {
+        "answer": "IGLESIA",
+        "points": "22"
+        },
+        "Respuesta4": {
+        "answer": "NOCHE",
+        "points": "11"
+        },
+        "Respuesta5": {
+        "answer": "TIENDA",
+        "points": "10"
+        }
+    },
+    {
+        "Question": "¿Cuanto tiempo te gustaria que duraran las vacaciones de verano?",
+        "id": "82",
+        "Respuesta1": {
+        "answer": "TRES MESES",
+        "points": "35"
+        },
+        "Respuesta2": {
+        "answer": "DOS MESES",
+        "points": "30"
+        },
+        "Respuesta3": {
+        "answer": "UN MES",
+        "points": "25"
+        },
+        "Respuesta4": {
+        "answer": "SEIS MESES",
+        "points": "6"
+        },
+        "Respuesta5": {
+        "answer": "CUATRO MESES",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "Si un extraterrestre te llevara a su planeta, ¿Que le preguntarias?",
+        "id": "83",
+        "Respuesta1": {
+        "answer": "PARA QUE",
+        "points": "38"
+        },
+        "Respuesta2": {
+        "answer": "QUE COMEN",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "DONDE ESTOY",
+        "points": "17"
+        },
+        "Respuesta4": {
+        "answer": "PORQUE A MI",
+        "points": "16"
+        },
+        "Respuesta5": {
+        "answer": "COMO VIVEN",
+        "points": "5"
+        }
+    },
+    {
+        "Question": "Forma cariñosa en que las mamas llaman a sus hijas",
+        "id": "84",
+        "Respuesta1": {
+        "answer": "AMOR",
+        "points": "38"
+        },
+        "Respuesta2": {
+        "answer": "PRINCESA",
+        "points": "31"
+        },
+        "Respuesta3": {
+        "answer": "MIJA",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "BEBE",
+        "points": "5"
+        },
+        "Respuesta5": {
+        "answer": "NIÑA",
+        "points": "3"
+        }
+    },
+    {
+        "Question": "¿Cual es tu mes favorito para hacer un dia de campo?",
+        "id": "85",
+        "Respuesta1": {
+        "answer": "FEBRERO",
+        "points": "39"
+        },
+        "Respuesta2": {
+        "answer": "JULIO",
+        "points": "35"
+        },
+        "Respuesta3": {
+        "answer": "MARZO",
+        "points": "12"
+        },
+        "Respuesta4": {
+        "answer": "MAYO",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "JUNIO",
+        "points": "6"
+        }
+    },
+    {
+        "Question": "¿Como te das cuenta que tu hijo quiere pedirte algo?",
+        "id": "86",
+        "Respuesta1": {
+        "answer": "CARIÑOS",
+        "points": "37"
+        },
+        "Respuesta2": {
+        "answer": "COMPORTAMIENTO",
+        "points": "27"
+        },
+        "Respuesta3": {
+        "answer": "MIRADA",
+        "points": "15"
+        },
+        "Respuesta4": {
+        "answer": "TONO",
+        "points": "13"
+        },
+        "Respuesta5": {
+        "answer": "PIDE",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Ingrediente que no puede faltar en un \"burrito\"",
+        "id": "87",
+        "Respuesta1": {
+        "answer": "FRIJOLES",
+        "points": "37"
+        },
+        "Respuesta2": {
+        "answer": "CHILE",
+        "points": "22"
+        },
+        "Respuesta3": {
+        "answer": "CARNE",
+        "points": "18"
+        },
+        "Respuesta4": {
+        "answer": "SALSA",
+        "points": "15"
+        },
+        "Respuesta5": {
+        "answer": "ARROZ",
+        "points": "8"
+        }
+    },
+    {
+        "Question": "Si tuvieras algun super poder, ¿A quien se lo confesarias?",
+        "id": "88",
+        "Respuesta1": {
+        "answer": "PAREJA",
+        "points": "35"
+        },
+        "Respuesta2": {
+        "answer": "PAPAS",
+        "points": "23"
+        },
+        "Respuesta3": {
+        "answer": "HIJOS",
+        "points": "21"
+        },
+        "Respuesta4": {
+        "answer": "NADIE",
+        "points": "12"
+        },
+        "Respuesta5": {
+        "answer": "AMIGA",
+        "points": "9"
+        }
+    },
+    {
+        "Question": "En las peliculas del viejo oeste, ¿Como identificas a un vaquero?",
+        "id": "89",
+        "Respuesta1": {
+        "answer": "SOMBRERO",
+        "points": "39"
+        },
+        "Respuesta2": {
+        "answer": "BOTAS",
+        "points": "38"
+        },
+        "Respuesta3": {
+        "answer": "PISTOLA",
+        "points": "12"
+        },
+        "Respuesta4": {
+        "answer": "ROPA",
+        "points": "6"
+        },
+        "Respuesta5": {
+        "answer": "CABALLO",
+        "points": "5"
+        }
+    },
+    {
+        "Question": "Durante el dia, persona con la que hablas mas por telefono",
+        "id": "90",
+        "Respuesta1": {
+        "answer": "PAREJA",
+        "points": "28"
+        },
+        "Respuesta2": {
+        "answer": "PAPAS",
+        "points": "26"
+        },
+        "Respuesta3": {
+        "answer": "HIJOS",
+        "points": "23"
+        },
+        "Respuesta4": {
+        "answer": "HERMANOS",
+        "points": "14"
+        },
+        "Respuesta5": {
+        "answer": "AMIGOS",
+        "points": "9"
+        }
+    },
+    {
+        "Question": "Nombra un lugar al que vas porque alguien te lo recomendo",
+        "id": "91",
+        "Respuesta1": {
+        "answer": "RESTAURANTE",
+        "points": "63"
+        },
+        "Respuesta2": {
+        "answer": "CINE",
+        "points": "16"
+        },
+        "Respuesta3": {
+        "answer": "ANTRO",
+        "points": "11"
+        },
+        "Respuesta4": {
+        "answer": "DENTISTA",
+        "points": "6"
+        },
+        "Respuesta5": {
+        "answer": "DOCTOR",
+        "points": "4"
+        }
+    },
+    {
+        "Question": "Lugar en el que te daria pena que tu hijo hiciera un berrinche",
+        "id": "92",
+        "Respuesta1": {
+        "answer": "TIENDA",
+        "points": "40"
+        },
+        "Respuesta2": {
+        "answer": "CALLE",
+        "points": "27"
+        },
+        "Respuesta3": {
+        "answer": "IGLESIA",
+        "points": "18"
+        },
+        "Respuesta4": {
+        "answer": "PUBLICO",
+        "points": "9"
+        },
+        "Respuesta5": {
+        "answer": "SUPER MERCADO",
+        "points": "6"
+        }
+    },
+    {
+        "Question": "¿Como te das cuenta que le caes mal a una persona?",
+        "id": "93",
+        "Respuesta1": {
+        "answer": "MIRADA",
+        "points": "40"
+        },
+        "Respuesta2": {
+        "answer": "IGNORAN",
+        "points": "29"
+        },
+        "Respuesta3": {
+        "answer": "ACTITUD",
+        "points": "17"
+        },
+        "Respuesta4": {
+        "answer": "EXPRESION",
+        "points": "12"
+        },
+        "Respuesta5": {
+        "answer": "TONO",
+        "points": "2"
+        }
+    },
+    {
+        "Question": "Regalo que te sorprenderia en tu aniversario de bodas",
+        "id": "94",
+        "Respuesta1": {
+        "answer": "CARRO",
+        "points": "27"
+        },
+        "Respuesta2": {
+        "answer": "VIAJE",
+        "points": "23"
+        },
+        "Respuesta3": {
+        "answer": "JOYAS",
+        "points": "20"
+        },
+        "Respuesta4": {
+        "answer": "CASAS",
+        "points": "18"
+        },
+        "Respuesta5": {
+        "answer": "DINERO",
+        "points": "12"
+        }
+    },
+    {
+        "Question": "Si pudieras regresar en el tiempo, ¿En que decada te gustaria vivir?",
+        "id": "95",
+        "Respuesta1": {
+        "answer": "OCHENTAS",
+        "points": "37"
+        },
+        "Respuesta2": {
+        "answer": "SETENTAS",
+        "points": "31"
+        },
+        "Respuesta3": {
+        "answer": "SESENTAS",
+        "points": "24"
+        },
+        "Respuesta4": {
+        "answer": "CINCUENTAS",
+        "points": "7"
+        },
+        "Respuesta5": {
+        "answer": "NOVENTAS",
+        "points": "1"
+        }
+    },
+    {
+        "Question": "Ropa o accesorio que utilizar para hacer ejercicio",
+        "id": "96",
+        "Respuesta1": {
+        "answer": "SHORT",
+        "points": "41"
+        },
+        "Respuesta2": {
+        "answer": "PANTS",
+        "points": "36"
+        },
+        "Respuesta3": {
+        "answer": "TENIS",
+        "points": "10"
+        },
+        "Respuesta4": {
+        "answer": "LICRA",
+        "points": "7"
+        },
+        "Respuesta5": {
+        "answer": "PLAYERA",
+        "points": "6"
+        }
+    },
+    {
+        "Question": "Cuando estas en la playa, ¿Que es lo que mas disfrutas ver?",
+        "id": "97",
+        "Respuesta1": {
+        "answer": "ATARDECER",
+        "points": "26"
+        },
+        "Respuesta2": {
+        "answer": "MUJERES",
+        "points": "24"
+        },
+        "Respuesta3": {
+        "answer": "MAR",
+        "points": "19"
+        },
+        "Respuesta4": {
+        "answer": "TRAJES DE BAÑO",
+        "points": "18"
+        },
+        "Respuesta5": {
+        "answer": "NIETOS",
+        "points": "13"
+        }
+    },
+    {
+        "Question": "Algo que puedes hacer con la nieve",
+        "id": "98",
+        "Respuesta1": {
+        "answer": "MUÑECO",
+        "points": "29"
+        },
+        "Respuesta2": {
+        "answer": "JUGAR",
+        "points": "28"
+        },
+        "Respuesta3": {
+        "answer": "BOLA",
+        "points": "17"
+        },
+        "Respuesta4": {
+        "answer": "COMER",
+        "points": "14"
+        },
+        "Respuesta5": {
+        "answer": "FIGURAS",
+        "points": "12"
+        }
+    },
+    {
+        "Question": "¿Como bajas el calor en un dia muy soleado?",
+        "id": "99",
+        "Respuesta1": {
+        "answer": "AGUA",
+        "points": "53"
+        },
+        "Respuesta2": {
+        "answer": "AIRE ACONDICIONADO",
+        "points": "22"
+        },
+        "Respuesta3": {
+        "answer": "BAÑO",
+        "points": "12"
+        },
+        "Respuesta4": {
+        "answer": "CERVEZA",
+        "points": "8"
+        },
+        "Respuesta5": {
+        "answer": "NADANDO",
+        "points": "5"
+        }
+    },
+    {
+        "Question": "Menciona algo que te puede provocar alergia",
+        "id": "100",
+        "Respuesta1": {
+        "answer": "POLVO",
+        "points": "29"
+        },
+        "Respuesta2": {
+        "answer": "POLEN",
+        "points": "27"
+        },
+        "Respuesta3": {
+        "answer": "ANIMALES",
+        "points": "17"
+        },
+        "Respuesta4": {
+        "answer": "PLANTAS",
+        "points": "15"
+        },
+        "Respuesta5": {
+        "answer": "MEDICINA",
+        "points": "12"
+        }
+    }
+    ]; 
+
+    function navigateToCard() {
+        const cardNumber = document.getElementById('cardNavigator').value;
+        if (cardNumber && cardNumber >= 1) {
+            const cardId = 'card' + cardNumber;
+            const targetCard = document.getElementById(cardId);
+            
+            if (targetCard) {
+                targetCard.scrollIntoView({ behavior: 'smooth' });
                 
-                if (targetCard) {
-                    targetCard.scrollIntoView({ behavior: 'smooth' });
-                    
-                    // Resaltar temporalmente la tarjeta
-                    targetCard.style.boxShadow = '0 0 0 3px rgba(0,123,255,0.5)';
-                    setTimeout(() => {
-                        targetCard.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-                    }, 1000);
-                }
+                // Resaltar temporalmente la tarjeta
+                targetCard.style.boxShadow = '0 0 0 3px rgba(0,123,255,0.5)';
+                setTimeout(() => {
+                    targetCard.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                }, 1000);
             }
         }
+    }
+    
+    function setCardsHTML() {
+        const body = document.body;
         
-        // Permitir navegar con Enter
-        document.getElementById('cardNavigator').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                navigateToCard();
-            }
+        dataCards.forEach(item => {
+            let cardHTML = `
+            <div class="cards-container">
+            <!-- Tarjeta ${item.id}-->
+                <div class="card" id="card${item.id}">
+                    <div class="card-header">
+                        <h3 class="card-title">${item.Question}</h3>
+                        <a href="#tarjeta1" class="card-number">${item.id}</a>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="two-columns">
+                            <div class="column">
+                                <div class="row">
+                                    <span class="left-align">${item.Respuesta1.answer}</span>
+                                    <span class="right-align">${item.Respuesta1.points}</span>
+                                </div>
+                                <div class="row">
+                                    <span class="left-align">${item.Respuesta2.answer}</span>
+                                    <span class="right-align">${item.Respuesta2.points}</span>
+                                </div>
+                                <div class="row">
+                                    <span class="left-align">${item.Respuesta3.answer}</span>
+                                    <span class="right-align">${item.Respuesta3.points}</span>
+                                </div>
+                                <div class="row">
+                                    <span class="left-align">${item.Respuesta4.answer}</span>
+                                    <span class="right-align">${item.Respuesta4.points}</span>
+                                </div>
+                                <div class="row">
+                                    <span class="left-align">${item.Respuesta5.answer}</span>
+                                    <span class="right-align">${item.Respuesta5.points}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = cardHTML;
+
+        while (tempDiv.firstChild) {
+            body.appendChild(tempDiv.firstChild);
+        }
+
         });
+    }
+
+    setCardsHTML();
+    
+    // Permitir navegar con Enter
+    document.getElementById('cardNavigator').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            navigateToCard();
+        }
+    });
     </script>
 </body>
 </html>
