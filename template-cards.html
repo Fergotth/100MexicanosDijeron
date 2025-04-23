@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta Responsive</title>
+    <title>Tarjetas con Navegación</title>
     <style>
         * {
             box-sizing: border-box;
@@ -15,17 +15,58 @@
             font-family: Arial, sans-serif;
             padding: 10px;
             background-color: #f9f9f9;
+            padding-top: 60px; /* Espacio para el input sticky */
+        }
+        
+        .nav-input-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            z-index: 1000;
+            background-color: white;
+            padding: 5px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .nav-input {
+            width: 50px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 15px 0 0 15px;
+            text-align: center;
+        }
+        
+        .nav-button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0 15px 15px 0;
+            cursor: pointer;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+        }
+        
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
         }
         
         .card {
             width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             overflow: hidden;
             background-color: white;
+            scroll-margin-top: 70px; /* Espacio para el sticky header */
         }
         
         .card-header {
@@ -39,7 +80,7 @@
         .card-title {
             margin: 0;
             font-size: 1.2em;
-            padding: 0 30px; /* Espacio para el número */
+            padding: 0 30px;
         }
         
         .card-number {
@@ -64,7 +105,7 @@
         
         .two-columns {
             display: flex;
-            flex-direction: column; /* Cambia a columna en móviles */
+            flex-direction: column;
         }
         
         .column {
@@ -91,65 +132,147 @@
         .right-align {
             text-align: right;
         }
-
-        /* Estilos para pantallas más grandes (tablets/desktop) */
-        @media (min-width: 600px) {
-            .two-columns {
-                flex-direction: row; /* Vuelve a fila en pantallas grandes */
-            }
-            
-            .column {
-                width: 48%;
-            }
-            
-            .row {
-                display: block;
-                border-bottom: none;
-            }
-            
-            .left-align {
-                text-align: left;
-            }
-            
-            .right-align {
-                text-align: right;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Si pudieras entender el idioma de los perros, ¿De que te gustaria platicar con ellos?</h3>
-            <a href="#tarjeta1" class="card-number">1</a>
+    <!-- Input sticky para navegación -->
+    <div class="nav-input-container">
+        <input type="number" class="nav-input" placeholder="N°" min="1" id="cardNavigator">
+        <button class="nav-button" onclick="navigateToCard()">Ir</button>
+    </div>
+
+    <div class="cards-container">
+        <!-- Primera tarjeta -->
+        <div class="card" id="tarjeta1">
+            <div class="card-header">
+                <h3 class="card-title">Tarjeta 1</h3>
+                <a href="#tarjeta1" class="card-number">1</a>
+            </div>
+            
+            <div class="card-content">
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="row">
+                            <span class="left-align">Fila 1 izquierda</span>
+                            <span class="right-align">Fila 1 derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila 2 izquierda</span>
+                            <span class="right-align">Fila 2 derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila 3 izquierda</span>
+                            <span class="right-align">Fila 3 derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila 4 izquierda</span>
+                            <span class="right-align">Fila 4 derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila 5 izquierda</span>
+                            <span class="right-align">Fila 5 derecha</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="card-content">
-            <div class="two-columns">
-                <div class="column">
-                    <div class="row">
-                        <span class="left-align">Fila 1 izquierda</span>
-                        <span class="right-align">Fila 1 derecha</span>
+
+        <!-- Segunda tarjeta -->
+        <div class="card" id="tarjeta2">
+            <div class="card-header">
+                <h3 class="card-title">Tarjeta 2</h3>
+                <a href="#tarjeta2" class="card-number">2</a>
+            </div>
+            
+            <div class="card-content">
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="row">
+                            <span class="left-align">Fila A izquierda</span>
+                            <span class="right-align">Fila A derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila B izquierda</span>
+                            <span class="right-align">Fila B derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila C izquierda</span>
+                            <span class="right-align">Fila C derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila D izquierda</span>
+                            <span class="right-align">Fila D derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila E izquierda</span>
+                            <span class="right-align">Fila E derecha</span>
+                        </div>
                     </div>
-                    <div class="row">
-                        <span class="left-align">Fila 2 izquierda</span>
-                        <span class="right-align">Fila 2 derecha</span>
-                    </div>
-                    <div class="row">
-                        <span class="left-align">Fila 3 izquierda</span>
-                        <span class="right-align">Fila 3 derecha</span>
-                    </div>
-                    <div class="row">
-                        <span class="left-align">Fila 4 izquierda</span>
-                        <span class="right-align">Fila 4 derecha</span>
-                    </div>
-                    <div class="row">
-                        <span class="left-align">Fila 5 izquierda</span>
-                        <span class="right-align">Fila 5 derecha</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tercera tarjeta -->
+        <div class="card" id="tarjeta3">
+            <div class="card-header">
+                <h3 class="card-title">Tarjeta 3</h3>
+                <a href="#tarjeta3" class="card-number">3</a>
+            </div>
+            
+            <div class="card-content">
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="row">
+                            <span class="left-align">Fila X izquierda</span>
+                            <span class="right-align">Fila X derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila Y izquierda</span>
+                            <span class="right-align">Fila Y derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila Z izquierda</span>
+                            <span class="right-align">Fila Z derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila W izquierda</span>
+                            <span class="right-align">Fila W derecha</span>
+                        </div>
+                        <div class="row">
+                            <span class="left-align">Fila V izquierda</span>
+                            <span class="right-align">Fila V derecha</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function navigateToCard() {
+            const cardNumber = document.getElementById('cardNavigator').value;
+            if (cardNumber && cardNumber >= 1) {
+                const cardId = 'tarjeta' + cardNumber;
+                const targetCard = document.getElementById(cardId);
+                
+                if (targetCard) {
+                    targetCard.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Resaltar temporalmente la tarjeta
+                    targetCard.style.boxShadow = '0 0 0 3px rgba(0,123,255,0.5)';
+                    setTimeout(() => {
+                        targetCard.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                    }, 1000);
+                }
+            }
+        }
+        
+        // Permitir navegar con Enter
+        document.getElementById('cardNavigator').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                navigateToCard();
+            }
+        });
+    </script>
 </body>
 </html>
