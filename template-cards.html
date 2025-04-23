@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Responsive</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        
+        .card {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            background-color: white;
+        }
+        
+        .card-header {
+            background-color: #f5f5f5;
+            padding: 15px;
+            position: relative;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .card-title {
+            margin: 0;
+            font-size: 1.2em;
+            padding: 0 30px; /* Espacio para el número */
+        }
+        
+        .card-number {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+        
+        .card-number:hover {
+            background-color: #0056b3;
+        }
+        
+        .card-content {
+            padding: 10px;
+        }
+        
+        .two-columns {
+            display: flex;
+            flex-direction: column; /* Cambia a columna en móviles */
+        }
+        
+        .column {
+            width: 100%;
+        }
+        
+        .row {
+            margin-bottom: 8px;
+            padding: 8px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .row:last-child {
+            border-bottom: none;
+        }
+        
+        .left-align {
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .right-align {
+            text-align: right;
+        }
+
+        /* Estilos para pantallas más grandes (tablets/desktop) */
+        @media (min-width: 600px) {
+            .two-columns {
+                flex-direction: row; /* Vuelve a fila en pantallas grandes */
+            }
+            
+            .column {
+                width: 48%;
+            }
+            
+            .row {
+                display: block;
+                border-bottom: none;
+            }
+            
+            .left-align {
+                text-align: left;
+            }
+            
+            .right-align {
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Título de la Tarjeta</h3>
+            <a href="#tarjeta1" class="card-number">1</a>
+        </div>
+        
+        <div class="card-content">
+            <div class="two-columns">
+                <div class="column">
+                    <div class="row">
+                        <span class="left-align">Fila 1 izquierda</span>
+                        <span class="right-align">Fila 1 derecha</span>
+                    </div>
+                    <div class="row">
+                        <span class="left-align">Fila 2 izquierda</span>
+                        <span class="right-align">Fila 2 derecha</span>
+                    </div>
+                    <div class="row">
+                        <span class="left-align">Fila 3 izquierda</span>
+                        <span class="right-align">Fila 3 derecha</span>
+                    </div>
+                    <div class="row">
+                        <span class="left-align">Fila 4 izquierda</span>
+                        <span class="right-align">Fila 4 derecha</span>
+                    </div>
+                    <div class="row">
+                        <span class="left-align">Fila 5 izquierda</span>
+                        <span class="right-align">Fila 5 derecha</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
